@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MRT Station Demand Map</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app">
+  <canvas id="cv" role="img" aria-label="Map of Singapore MRT and LRT stations sized by passenger volume"></canvas>
+
+  <div id="tl">
+    <div class="ov" id="title">
+      <h1 id="h1"></h1>
+      <p id="monthLbl"></p>
+      <div class="clk"><span class="t" id="clockT">08:00</span><span class="d" id="clockD"></span></div>
+    </div>
+    <div class="ov" id="zoom"><button class="ib" id="zin" aria-label="Zoom in">+</button><button class="ib" id="zout" aria-label="Zoom out">&minus;</button><button class="ib" id="zreset" aria-label="Reset view" style="font-size:14px">&#8634;</button></div>
+  </div>
+
+  <div id="rt">
+    <div class="ov" id="ctl">
+      <button class="hb" id="ctlBtn" aria-expanded="false" aria-controls="ctlBody">Controls <small id="ctlSum"></small><span class="car">&#9662;</span></button>
+      <div id="ctlBody" class="pb" hidden></div>
+    </div>
+    <div class="ov" id="top">
+      <button class="hb" id="topBtn" aria-expanded="false" aria-controls="topBody">Top stations <small id="topSum"></small><span class="car">&#9662;</span></button>
+      <div id="topBody" class="pb" hidden></div>
+    </div>
+    <div class="ov" id="set">
+      <button class="hb" id="setBtn" aria-expanded="false" aria-controls="setBody">Settings <small>colours, sizes, basemap</small><span class="car">&#9662;</span></button>
+      <div id="setBody" class="pb" hidden></div>
+    </div>
+    <aside class="ov" id="sc" hidden aria-label="Station profile"><button id="scX" aria-label="Close station profile">&times;</button><div id="scBody"></div></aside>
+  </div>
+
+  <div class="ov" id="lg"><button class="hb" id="lgBtn" aria-expanded="false" aria-controls="lgBody"><span>Legend</span> <small id="lgSum"></small><span class="car">&#9662;</span></button><div id="lgBody" hidden></div></div>
+
+  <div class="ov" id="cb" hidden>
+    <div class="hd"><b id="cbTitle"></b><span class="cl"><i id="swIn"></i>Tap in</span><span class="cl"><i id="swOut"></i>Tap out</span><span>Drag to change the hour</span></div>
+    <svg id="chart" role="img" aria-label="Taps by hour for the selected lines"></svg>
+    <div id="scrubRow"></div>
+    <div class="fn" id="cbNote"></div>
+  </div>
+
+  <div class="ov" id="dock">
+    <button class="play" id="play" aria-label="Play animation">&#9654; Play</button>
+    <span class="hrl">05</span><input id="scrub" type="range" min="5" max="23" step="1" value="8" aria-label="Hour of day"><span class="hrl">23</span>
+    <div class="seg sm" id="sgSpeed" aria-label="Animation speed"><button data-v="0.5" aria-pressed="false">0.5&times;</button><button data-v="1" aria-pressed="true">1&times;</button><button data-v="2" aria-pressed="false">2&times;</button><button data-v="4" aria-pressed="false">4&times;</button></div>
+    <button class="tg" id="chartTg" aria-pressed="false">Chart</button>
+  </div>
+
+  <div id="cred"><span id="credTxt"></span><button id="infoBtn" aria-label="Data and credits" aria-expanded="false" aria-controls="info">i</button></div>
+  <aside class="ov" id="info" hidden aria-label="Data and credits"></aside>
+  <div id="tip" hidden></div>
+  <div id="err" hidden></div>
+</div>
+
+<!-- Load order matters: settings first, then data, then code. Month files are loaded on demand from data/manifest.js -->
+<script src="js/config.js"></script>
+<script src="js/core.js"></script>
+<script src="data/manifest.js"></script>
+<script src="data/stations.js"></script>
+<script src="data/lines.js"></script>
+<script src="js/data.js"></script>
+
+
+<script src="js/mapview.js"></script>
+<script src="js/charts.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/top.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

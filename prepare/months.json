@@ -1,0 +1,24 @@
+{
+  "_note": "One entry per month. 'csv' is in prepare/raw/. 'accessed' = date you downloaded it from LTA DataMall. 'days' is an optional manual override {\"wd\":20,\"we\":11}; leave null to calculate from the calendar + holidays.json.",
+  "months": [
+    {
+      "month": "2026-07",
+      "csv": "pv_train_202607.csv",
+      "accessed": "2026-10-07",
+      "days": null
+    },
+    {
+      "month": "2026-08",
+      "csv": "Passenger_volume_by_MRT_stations_all_data_-_Aug26.csv",
+      "accessed": "2026-09-30",
+      "days": null
+    },
+    {
+      "month": "2026-09",
+      "csv": "pv_train_202609.csv",
+      "accessed": "2026-10-10",
+      "days": null
+    }
+
+  ]
+}

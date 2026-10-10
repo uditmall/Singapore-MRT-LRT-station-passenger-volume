@@ -1,0 +1,1 @@
+window.MRT_MANIFEST=[{"month":"2026-07","label":"July 2026","file":"data/2026-07.js","days":{"wd":23,"we":8},"accessed":"2026-10-07"},{"month":"2026-08","label":"August 2026","file":"data/2026-08.js","days":{"wd":20,"we":11},"accessed":"2026-09-30"},{"month":"2026-09","label":"September 2026","file":"data/2026-09.js","days":{"wd":22,"we":8},"accessed":"2026-10-10"}];
