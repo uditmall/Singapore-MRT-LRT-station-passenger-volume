@@ -9,7 +9,7 @@
     },
     {
       "month": "2026-08",
-      "csv": "Passenger_volume_by_MRT_stations_all_data_-_Aug26.csv",
+      "csv": "pv_train_202608.csv",
       "accessed": "2026-09-30",
       "days": null
     },
@@ -17,6 +17,12 @@
       "month": "2026-09",
       "csv": "pv_train_202609.csv",
       "accessed": "2026-10-10",
+      "days": null
+    },
+    {
+      "month": "2026-10",
+      "csv": "pv_train_202610.csv",
+      "accessed": "2026-11-10",
       "days": null
     }
 
